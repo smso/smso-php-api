@@ -1,0 +1,57 @@
+{
+    "name": "smso/smso-php-api",
+    "description": "A PHP library for communicating with the SMSO REST API",
+    "keywords": [
+        "smso",
+        "sms api",
+        "send sms"
+    ],
+    "homepage": "https://github.com/smso/smso-php-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Costin Moise",
+            "email": "necenzurat+composer@gmail.com",
+            "role": "CTO"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "suggest": {
+        "illuminate/support": "The PHP Framework For Web Artisans"
+    },
+    "autoload": {
+        "psr-4": {
+            "smso\\smso\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "smso\\smso\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "smso\\smso\\SmsoServiceProvider"
+            ],
+            "aliases": {
+                "SmsoApi": "smso\\smso\\SmsoFacade"
+            }
+        }
+    }
+}
